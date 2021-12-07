@@ -845,38 +845,7 @@ generate real-time, accurate, and reliable contact tracing reports.</span>
 						<div class="col-md-7 col-md-push-1">
 							<div class="row">
 								<div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInRight">
-<?php 
-if(isset($_POST['sendmsg'])){
-    
-    $to = "maeignaco@cvsu.edu.ph"; 
-    $from = $_POST['email']; 
-    $subject = $_POST['subj'] ."- Minlee Service Inquiry";
-    $fullname = $_POST['fname'];
-    $msg = $_POST['inquirymsg'];
-    $subject2 = $_POST['subj'] ."- Minlee Service Inquiry";
 
-    $message = $fullname  ." wrote the following:" . "\n\n" . $msg . "\n\nEmail address: " . $from;
-    $message2 = "Here is a copy of your message " . $fullname . "\n\n" . $msg;
-
-    $headers = "From:" . $from;
-    $headers2 = "From:" . $to;
-    mail($to,$subject,$message,$headers);
-    mail($from,$subject2,$message2,$headers2);   
-
-    echo"   <div class=\"alert alert-success\" id=\"s\" style=\"display:block\">
-                         All responses submitted successfully!
-                    </div>
-
-              <script>
-                    window.setTimeout(\"closeS();\", 10000);
-                    function closeS(){
-                        document.getElementById(\"s\").style.display=\"none\";
-                    }
-              </script>
-              ";
-    
-    }
-?>
 									<form action="" method="POST">
 										<div class="form-group">
 											<input type="text" class="form-control" placeholder="Name" name="fname" onkeypress='return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32))'  required>
